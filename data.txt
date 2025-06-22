@@ -1,9 +1,0 @@
-A: Hey! How’s it going?
-B: Hey! I’m good, thanks. How about you?
-A: Not bad. Just been busy with work lately.
-B: Same here. Do you have any plans this weekend?
-A: I might go hiking if the weather’s nice. What about you?
-B: That sounds fun! I’m thinking about catching a movie.
-A: Nice! Let me know if you want to hang out afterward.
-B: Will do! Have a good one!
-A: You too! Talk later.

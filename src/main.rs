@@ -88,48 +88,6 @@ async fn main() {
 // struct Foo{}
 
 
-
-
-
-// -- JUST READ FILE WITH CLI --
-
-// If you want to use this code, which searches and parses text from data.txt, 
-//   please comment out all the working code above and uncomment this code.
-
-/* 
-
-use std::env;
-use std::process;
-use funcs::{Config, run};
-
-mod funcs;
-
-
-
-fn main() {
-    let args: Vec<String> = env::args().collect();
-    
-    let config = Config::new(&args).unwrap_or_else(|err| {
-        println!("Problem parsing arg: {}" , err);
-        process::exit(1);
-    });
-    
-    println!("Search for {}", config.query);
-    println!("In file {}", config.filename);
-    
-    if let Err(e) = run(config) {
-        println!("Application error: {}", e);
-        process::exit(1);
-    }
-}
-*/
-// --------------- //
-
-
-
-
-
-
 /*
 let args = Cli::parse();
 let content = std::fs::read_to_string(&args.path).expect("could not read file");
