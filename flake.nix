@@ -28,9 +28,7 @@
         devShells.default = import ./shell.nix {inherit pkgs;};
         packages.default = rtest;
 
-        apps.default = flake-utils.lib.mkApp {
-          drv = rtest;
-        };
+        apps.default = self.defaultApp;
       }
     );
 }
