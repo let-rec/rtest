@@ -1,4 +1,4 @@
-/// These fns for main.rs commented fns -- JUST READ FILE CLI -- 
+/// These public fns for main.rs commented code -- JUST READ FILE CLI -- 
 use std::error::Error;
 use std::fs;
 use std::env;

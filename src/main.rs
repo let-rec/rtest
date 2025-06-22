@@ -1,4 +1,3 @@
-
 use clap::{ Parser, Subcommand};
 use std::io::{stdin};
 
@@ -50,23 +49,26 @@ pub fn create_name() -> String {
 #[tokio::main]
 async fn main() {
 
-    // let client  = reqwest::Client::new();
-    // let res = client.post("http://httpbin.org/post")
-    // .body("the exact body that is sent")
-    // .send()
-    // .await?;
-    // println!("body = {body:?}");
+    // let chunks: Vec<Result<_, ::std::io::Error>> = vec![
+    // Ok("hello"),
+    // Ok(" "),
+    // Ok("world"),
+    // ];
+
+    // let stream = futures_util::stream::iter(chunks);
+
+    // let body = Body::wrap_stream(stream);   
 
     loop {
-        let mut buf = String::from(create_name());
+        let mut buf = String::new();
         stdin().read_line(&mut buf).expect("Couldn't parse stdin");
         let line = buf.trim();
         let args = shlex::split(line).ok_or("error: invalid quoting").unwrap();
 
-        println!("ITS ARGS: {:?}", args);
+        println!("ITS BUF: {:?}", line);
         match Args::try_parse_from(args.iter()).map_err(|e| e.to_string()) {
             Ok(cli) =>{
-                println!("THIS IS CLI COMMAND: {:?}", cli);
+                println!("THIS IS CLI COMMAND: {:?}", cli.cmd);
                 match cli.cmd {
                     Commands::Get { arg } => get_something(arg),
                     Commands::Set { key, value, is_true } => set_something(key, value, is_true),
@@ -81,15 +83,21 @@ async fn main() {
 
 
 
-
 // -- LEARN this --
 // #[derive(Default)]
 // struct Foo{}
 
 
 
+
+
 // -- JUST READ FILE WITH CLI --
-/*
+
+// If you want to use this code, which searches and parses text from data.txt, 
+//   please comment out all the working code above and uncomment this code.
+
+/* 
+
 use std::env;
 use std::process;
 use funcs::{Config, run};
@@ -115,6 +123,10 @@ fn main() {
     }
 }
 */
+// --------------- //
+
+
+
 
 
 
