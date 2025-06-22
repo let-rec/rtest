@@ -30,7 +30,6 @@
 
         apps.default = flake-utils.lib.mkApp {
           drv = rtest;
-        }
-      }
-    );
+        };
+      });
 }
